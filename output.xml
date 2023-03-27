@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230327 09:59:26.577" rpa="false" schemaversion="3">
+<suite id="s1" name="Worten.test.bdd" source="c:\Users\Luan\Documents\Projetos\Worten-prática-robot\Worten.test.bdd.robot">
+<test id="s1-t1" name="Cenário 08 - Adicionando um smartphone ao carrinho" line="92">
+<kw name="Abrir o navegador" library="Worten.resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230327 09:59:26.914" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230327 09:59:26.913" endtime="20230327 09:59:28.190"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230327 09:59:28.190" endtime="20230327 09:59:28.318"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230327 09:59:28.319" endtime="20230327 09:59:28.319"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:26.912" endtime="20230327 09:59:28.320"/>
+</kw>
+<kw name="Dado que o usuário está na home page www.worten.pt" library="Worten.resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230327 09:59:28.323" level="INFO">Opening url 'https://www.worten.pt'</msg>
+<status status="PASS" starttime="20230327 09:59:28.322" endtime="20230327 09:59:32.573"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:28.321" endtime="20230327 09:59:32.573"/>
+</kw>
+<kw name="E aceitou o cookies" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${Aceitar_cookies}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:32.575" endtime="20230327 09:59:34.465"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${Aceitar_cookies}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230327 09:59:34.467" level="INFO">Clicking button '//button[@type='button'][contains(.,'Aceitar Tudo')]'.</msg>
+<status status="PASS" starttime="20230327 09:59:34.465" endtime="20230327 09:59:37.131"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:32.574" endtime="20230327 09:59:37.132"/>
+</kw>
+<kw name="E clicou em &quot;Telemóveis e Smartphones&quot;" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Telemóveis_Smartphones}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:37.141" endtime="20230327 09:59:38.202"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Telemóveis_Smartphones}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230327 09:59:38.203" level="INFO">Clicking element '//h2[contains(.,'Telemóveis e Smartphones')]'.</msg>
+<status status="PASS" starttime="20230327 09:59:38.202" endtime="20230327 09:59:39.276"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:37.140" endtime="20230327 09:59:39.276"/>
+</kw>
+<kw name="E clicou na opção &quot;Iphone&quot;" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Opção_Iphone}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:39.277" endtime="20230327 09:59:43.061"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Opção_Iphone}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230327 09:59:43.062" level="INFO">Clicking element '//h2[contains(.,'iPhone')]'.</msg>
+<status status="PASS" starttime="20230327 09:59:43.061" endtime="20230327 09:59:44.140"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:39.277" endtime="20230327 09:59:44.140"/>
+</kw>
+<kw name="E clicou na opção &quot;iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)&quot;" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Produto_Iphone14}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:44.142" endtime="20230327 09:59:49.763"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Produto_Iphone14}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230327 09:59:49.764" level="INFO">Clicking element '(//span[contains(@class,'produc-card__name__link')])[3]'.</msg>
+<status status="PASS" starttime="20230327 09:59:49.763" endtime="20230327 09:59:51.101"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:44.141" endtime="20230327 09:59:51.101"/>
+</kw>
+<kw name="Quando adicionar o &quot;iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)&quot; no carrinho" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Adiciona_Carrinho}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:51.104" endtime="20230327 09:59:55.448"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Adiciona_Carrinho}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230327 09:59:55.449" level="INFO">Clicking button '//button[@type='button'][contains(.,'Adicionar ao carrinho')]'.</msg>
+<status status="PASS" starttime="20230327 09:59:55.448" endtime="20230327 09:59:58.131"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:51.103" endtime="20230327 09:59:58.131"/>
+</kw>
+<kw name="Então verifica se foi adicionado ao carrinho" library="Worten.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Ir_Carrinho}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230327 09:59:58.132" endtime="20230327 10:00:02.038"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Ir_Carrinho}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230327 10:00:02.039" level="INFO">Clicking button '//button[@type='button'][contains(.,'ir para carrinho')]'.</msg>
+<status status="PASS" starttime="20230327 10:00:02.038" endtime="20230327 10:00:04.707"/>
+</kw>
+<status status="PASS" starttime="20230327 09:59:58.132" endtime="20230327 10:00:04.707"/>
+</kw>
+<kw name="Fechar o navegador" library="Worten.resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230327 10:00:05.836" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230327 10:00:04.710" endtime="20230327 10:00:05.836"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230327 10:00:05.837" endtime="20230327 10:00:08.528"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230327 10:00:08.528" endtime="20230327 10:00:08.529"/>
+</kw>
+<status status="PASS" starttime="20230327 10:00:04.709" endtime="20230327 10:00:08.529"/>
+</kw>
+<doc>Esse teste adiciona smartphone ao carrinho</doc>
+<tag>Adiciona_smartphone</tag>
+<status status="PASS" starttime="20230327 09:59:26.911" endtime="20230327 10:00:08.530"/>
+</test>
+<doc>Essa suíte será testa o site do www.Worten.pt</doc>
+<status status="PASS" starttime="20230327 09:59:26.584" endtime="20230327 10:00:08.533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Adiciona_smartphone</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Worten.test.bdd">Worten.test.bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
