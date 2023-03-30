@@ -5,11 +5,11 @@ Library    SeleniumLibrary
 ${DELAY}                     0.5
 ${URL}                       https://www.worten.pt
 ${Aceitar_cookies}           //button[@type='button'][contains(.,'Aceitar Tudo')]
-${Ver_Produtos}              (//span[contains(.,'VER PRODUTOS')])[1]
-${Olá!_IniciarSessão}        (//button[contains(@type,'button')])[4]
+${Worten}                    //img[contains(@alt,'Worten Portugal')]
+${Olá!_IniciarSessão}        //button[contains(@class,'login-container button--tertiary button--lg button--white')]
 ${Iniciar_Sessão}            //a[contains(.,'Iniciar Sessão')]
 ${Área_Cliente}              //div[@class='client-area-v3']
-${Produtos}                  //button[@aria-label='Produtos']
+${Produtos}                  //button[contains(@aria-label,'Produtos')]
 ${Verifica_Marcas}           //span[@class='highlighted-nav__title'][contains(.,'Marcas')]
 ${Informática}               (//button[@class='nav-tab__categories__button'][contains(.,'Informática')])[1]
 ${Tablets}                   //a[@href='/informatica-e-acessorios/tablets']
@@ -19,13 +19,13 @@ ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao c
 ${Ir_Carrinho}               //button[@type='button'][contains(.,'ir para carrinho')]
 ${Remover_Carrinho}          //button[contains(.,'Remover')]
 ${Carrinho_Vazio}            //p[@class='cart__product--empty__title font-1xl semibold neu-06'][contains(.,'Carrinho vazio')]
-${Click_Tvs}                 //h2[contains(.,'TVs')]
+${Click_Tvs}                 //p[@class='image-links__item-title'][contains(.,'SMARTPHONES')]
 ${Opção_Samsung}             //h3[@class='simple-link__label'][contains(.,'Samsung')]
-${Título_TV}                 //h1[@class='page-title__title page-title__title--centered'][contains(.,'TVs SAMSUNG')]
-${Opção_Tv}                  (//div[contains(@class,'product-card__flag flag--modal-disabled')])[2]
+${Título_TV}                 //p[@class='neu-11'][contains(.,'tvs 32')]
+${Opção_Tv}                  (//span[contains(@class,'produc-card__name__link')])[1]
 ${Telemóveis_Smartphones}    //h2[contains(.,'Telemóveis e Smartphones')]
-${Opção_Iphone}              //h2[contains(.,'iPhone')]
-${Produto_Iphone14}          (//span[contains(@class,'produc-card__name__link')])[3]
+${Opção_Iphone}              (//span[@class='bold'][contains(.,'iphone')])[1]
+${Produto_Iphone14}          (//span[contains(@class,'produc-card__name__link')])[1]
 ${Opção_Cama}                (//span[@class='bold'][contains(.,'cama')])[1]
 ${Produto_Cama}               //span[contains(.,'vidaXL Estrutura de cama c/ gavetas 90x200 cm branco')]
 ${Botão_Carrinho}             //a[@aria-label='Carrinho']
@@ -42,6 +42,7 @@ ${Opção_S/Juros}             //p[contains(.,'3x sem juros** TAEG 0%')]
 ${Credito_Worten}            //h1[contains(.,'Crédito Worten')]
 ${Opção_PreçoMinimo}         //p[contains(.,'Preço mínimo garantido')]
 ${Preço_Minimo}              //h1[contains(.,'Preço Mínimo Garantido')]
+${Criar_Conta}               //a[contains(.,'Criar Conta')]
 
 *** Keywords ***
 Abrir o navegador
@@ -62,7 +63,7 @@ E aceitou o cookies
     Click Button    locator=${Aceitar_cookies} 
 
 Então a modal deve desaperecer
-    Wait Until Element Is Visible    ${Ver_Produtos}   
+    Wait Until Element Is Visible    ${Worten}      
 
 Quando o usuário clicar em Olá! Iniciar Sessão
     Click Button    ${Olá!_IniciarSessão} 
@@ -119,34 +120,33 @@ E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB R
 E o carrinho deve ficar vazio
     Wait Until Element Is Visible    ${Carrinho_Vazio}
 
-E clicou em "TVs"
-    Click Element    ${Click_Tvs} 
+E pesquisou por TVs
+    Input Text    search    Tvs
 
-E clicou na opção "samsung"   
-    Wait Until Element Is Visible    ${Opção_Samsung}
-    Click Element   ${Opção_Samsung}
-
-Quando clicar em " TV SAMSUNG UE55AU7175 (LED - 55'' - 140 cm - 4K Ultra HD - Smart TV)"
+E clicou na opção tvs
     Wait Until Element Is Visible    ${Título_TV}  
+    Click Element    ${Título_TV}  
+
+Quando clicar na opção de tvs
+    Wait Until Element Is Visible    ${Opção_Tv} 
     Click Element   ${Opção_Tv} 
 
-Então remove o produto "TV SAMSUNG UE43BU8505KXXC (LED - 43'' - 109 cm - 4K Ultra HD - Smart TV)" do carrinho
+Então remove o produto tv do carrinho
     Wait Until Element Is Visible    ${Remover_Carrinho}    
     Click Button    ${Remover_Carrinho}
 
-E clicou em "Telemóveis e Smartphones"
-    Wait Until Element Is Visible    ${Telemóveis_Smartphones}  
-    Click Element    ${Telemóveis_Smartphones}  
+E pesquisou por iphone
+    Input Text    search    iphone
 
-E clicou na opção "Iphone"
+E clicou na opção de iphone
     Wait Until Element Is Visible    ${Opção_Iphone}   
     Click Element  ${Opção_Iphone}   
 
-E clicou na opção "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)"
+E clicou no produto iphone
     Wait Until Element Is Visible    ${Produto_Iphone14}  
     Click Element    ${Produto_Iphone14}  
 
-Quando adicionar o "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)" no carrinho
+Quando adicionar a opção de iphone no carrinho
     Wait Until Element Is Visible    ${Adiciona_Carrinho} 
     Click Button    ${Adiciona_Carrinho}
 
@@ -266,3 +266,16 @@ Quando clica na opção "Preço mínimo garantido"
 
 Então deve aparecer a frase "Preço Mínimo Garantido"
     Wait Until Element Is Visible   ${Preço_Minimo}  
+
+E clicou em "Olá! Iniciar Sessão"
+    Wait Until Element Is Visible    ${Olá!_IniciarSessão}
+    Click Button   ${Olá!_IniciarSessão}
+
+E clicou em "Criar Conta"
+    Click Link    ${Criar_Conta}  
+    Wait Until Element Is Visible    //p[@class='h-mb-3'][contains(.,'Cria a tua conta de forma rápida e fácil')]
+Quando o usuário preencher todos os campos
+    Input Text    input-name    Marco
+    Input Text    input-last-name    Almeida
+    Input Text    input-email    marco.devqa@gmail.com
+    Input Password    password-field    marco1234

@@ -70,9 +70,9 @@ Cenário 06 - Adicionando uma "TV" ao carrinho
     [Tags]             Adiciona_TV
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
-    E clicou em "TVs"
-    E clicou na opção "samsung"
-    Quando clicar em " TV SAMSUNG UE55AU7175 (LED - 55'' - 140 cm - 4K Ultra HD - Smart TV)"
+    E pesquisou por TVs
+    E clicou na opção tvs
+    Quando clicar na opção de tvs
     Então adiciona ao carrinho
     E verifica se foi adicionado ao carrinho
 
@@ -81,23 +81,23 @@ Cenário 07 - Removendo uma TV do carrinho
     [Tags]             Remove_TV
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
-    E clicou em "TVs"
-    E clicou na opção "samsung"
-    Quando clicar em " TV SAMSUNG UE55AU7175 (LED - 55'' - 140 cm - 4K Ultra HD - Smart TV)"
+    E pesquisou por TVs
+    E clicou na opção tvs
+    Quando clicar na opção de tvs
     E adiciona ao carrinho
     E verificou se foi adicionado ao carrinho
-    Então remove o produto "TV SAMSUNG UE43BU8505KXXC (LED - 43'' - 109 cm - 4K Ultra HD - Smart TV)" do carrinho
+    Então remove o produto tv do carrinho
     E o carrinho deve estar vazio
 
-Cenário 08 - Adicionando um smartphone ao carrinho
+Cenário 08 - Adicionando um iphone ao carrinho
     [Documentation]    Esse teste adiciona smartphone ao carrinho
     [Tags]             Adiciona_smartphone
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
-    E clicou em "Telemóveis e Smartphones"
-    E clicou na opção "Iphone"
-    E clicou na opção "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)"
-    Quando adicionar o "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)" no carrinho
+    E pesquisou por iphone
+    E clicou na opção de iphone
+    E clicou no produto iphone
+    Quando adicionar a opção de iphone no carrinho
     Então verifica se foi adicionado ao carrinho
 
 Cenário 09 - Removendo smarphone do carrinho
@@ -105,10 +105,10 @@ Cenário 09 - Removendo smarphone do carrinho
     [Tags]             Remove_smartphone
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
-    E clicou em "Telemóveis e Smartphones"
-    E clicou na opção "Iphone"
-    E clicou na opção "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)"
-    Quando adicionar o "iPhone 14 Pro Max APPLE (6.7'' - 128 GB - Roxo Escuro)" no carrinho
+    E pesquisou por iphone
+    E clicou na opção de iphone
+    E clicou no produto iphone
+    Quando adicionar a opção de iphone no carrinho
     Então verifica se foi adicionado ao carrinho
     E remova o smartphone do carrinho
     E verifica o carrinho
