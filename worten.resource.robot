@@ -272,10 +272,11 @@ E clicou em "Olá! Iniciar Sessão"
     Click Button   ${Olá!_IniciarSessão}
 
 E clicou em "Criar Conta"
-    Click Link    ${Criar_Conta}  
-    Wait Until Element Is Visible    //p[@class='h-mb-3'][contains(.,'Cria a tua conta de forma rápida e fácil')]
+    Click Link    ${Criar_Conta}      
+    
 Quando o usuário preencher todos os campos
-    Input Text    input-name    Marco
-    Input Text    input-last-name    Almeida
-    Input Text    input-email    marco.devqa@gmail.com
-    Input Password    password-field    marco1234
+    Wait Until Element Is Visible                //h1[contains(.,'Criar Conta')]
+    Input Text            input-name             Marco
+    Input Text            input-last-name        Almeida
+    Input Text            input-email            marco.devqa@gmail.com
+    Input Password        password-field         marco1234
