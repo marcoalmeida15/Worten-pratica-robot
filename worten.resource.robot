@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${DELAY}                     0.5
+# ${DELAY}                     0.5
 ${URL}                       https://www.worten.pt
 ${Aceitar_cookies}           //button[@type='button'][contains(.,'Aceitar Tudo')]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
@@ -48,12 +48,12 @@ ${Criar_Conta}               //a[contains(.,'Criar Conta')]
 Abrir o navegador
     Open Browser    browser=chrome
     Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
+    # Set Selenium Speed    ${DELAY}
 
 Fechar o navegador
     Capture Page Screenshot
     Close Browser
-    Set Selenium Speed    ${DELAY}
+    # Set Selenium Speed    ${DELAY}
 
 Dado que o usuário está na home page www.worten.pt
     Go To    url=${URL}
@@ -275,8 +275,8 @@ E clicou em "Criar Conta"
     Click Link    ${Criar_Conta}      
     
 Quando o usuário preencher todos os campos
-    Wait Until Element Is Visible                //h1[contains(.,'Criar Conta')]
-    Input Text            input-name             Marco
-    Input Text            input-last-name        Almeida
-    Input Text            input-email            marco.devqa@gmail.com
-    Input Password        password-field         marco1234
+    Wait Until Element Is Visible    locator=id:input-name
+    Input Text            id:input-name             text:Marco
+    Input Text            id:input-last-name        text:Almeida
+    Input Text            id:input-email            text:marco.devqa@gmail.com
+    Input Password        id:password-field         text:marco1234
