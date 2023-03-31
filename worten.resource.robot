@@ -1,9 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library    SeleniumLibrary    run_on_failure=Capture Page Screenshot    screenshot_root_directory=EMBED 
 Library    OperatingSystem
 
 *** Variables ***
-# ${DELAY}                     0.5
 ${URL}                       https://www.worten.pt
 ${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button[2]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
@@ -49,11 +48,9 @@ ${Criar_Conta}               //a[contains(.,'Criar Conta')]
 Abrir o navegador
     Open Browser    browser=chrome
     Maximize Browser Window
-    # Set Selenium Speed    ${DELAY}
 
 Fechar o navegador
     Close Browser
-    # Set Selenium Speed    ${DELAY}
 
 Dado que o usuário está na home page www.worten.pt
     Go To    url=${URL}

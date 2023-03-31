@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Essa suíte será testa o site do www.Worten.pt
-Resource         Worten.resource.robot
+Resource         worten.resource.robot
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
