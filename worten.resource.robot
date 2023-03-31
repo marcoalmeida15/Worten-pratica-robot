@@ -16,7 +16,7 @@ ${Informática}               (//button[@class='nav-tab__categories__button'][co
 ${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
 ${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[10]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
 ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
-${Ir_Carrinho}               //button[@type='button'][contains(.,'ir para carrinho')]
+${Ir_Carrinho}               //*[@id="__layout"]/div/div/div[2]/div/div/div/div[1]/div[2]/button[2]
 ${Remover_Carrinho}          //button[contains(.,'Remover')]
 ${Carrinho_Vazio}            //p[@class='cart__product--empty__title font-1xl semibold neu-06'][contains(.,'Carrinho vazio')]
 ${Click_Tvs}                 //p[@class='image-links__item-title'][contains(.,'SMARTPHONES')]
@@ -75,7 +75,7 @@ Então deve ser redirecionado para a página de login
 
 Quando o usuário clicar em "Produtos"
     Wait Until Element Is Visible    locator=xpath:${Produtos}
-    Click Button   ${Produtos}
+    Click Button   locator=xpath:${Produtos}
 
 Então deve retornar um menu de produtos com várias opções
     Wait Until Element Is Visible    ${Verifica_Marcas} 
@@ -92,11 +92,12 @@ Então verifica se aparece a opção LENOVO M10 Plus + Capa + Pen(10.6'' - 128 G
 
 E adiciona ao carrinho
     Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div 
-    Click Button    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
+    Scroll Element Into View      locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
+    Click Element    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
 
 E verifica se foi adicionado ao carrinho
-    Wait Until Element Is Visible    ${Ir_Carrinho}  
-    Click Button    ${Ir_Carrinho}  
+    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Ir_Carrinho}  
+    Click Button    locator=xpath:${Ir_Carrinho}  
     
 E clicou em "Informática"
     Click Button    ${Informática} 
@@ -109,7 +110,7 @@ Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 
     Click Element    locator=xpath:${Produto_Tablets}
 
 Então adiciona ao carrinho
-    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}    
+    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho} 
     Click Button    locator=xpath:${Adiciona_Carrinho}
 
 E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)"" do carrinho
