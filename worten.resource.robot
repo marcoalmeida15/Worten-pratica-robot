@@ -275,7 +275,7 @@ E clicou em "Criar Conta"
     
 Quando o usuário preencher todos os campos
     Wait Until Element Is Visible             locator=id:input-name
-    Input Text                                id:input-name             text:Marco
-    Input Text                                id:input-last-name        text:Almeida
-    Input Text                                id:input-email            text:marco.devqa@gmail.com
-    Input Password                            id:password-field         text:marco1234
+    Input Text                                id:input-name                     text:Marco
+    Input Text                                id:input-last-name                text:Almeida
+    Input Text                                id:input-email                    text:marco.devqa@gmail.com
+    Input Password                            id:password-field                 text:marco1234
