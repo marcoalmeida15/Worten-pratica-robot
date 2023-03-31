@@ -12,7 +12,7 @@ Cenário 00 - Aceitando cookies
     E aceitou o cookies
     Então a modal deve desaperecer
 
-Cenário 01 - Fazendo login
+Cenário 01 - Verifica login
     [Documentation]    Esse teste verifica o login do usuário
     [Tags]             Login
     Dado que o usuário está na home page www.worten.pt
@@ -59,8 +59,8 @@ Cenário 05 - Remover produto do carrinho
     Quando o usuário clicar em "Produtos"
     E clicou em "Informática"
     E clicou em "Tablets"
-    E clicou no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
-    Então adiciona ao carrinho
+    Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+    E adiciona ao carrinho
     E verifica se foi adicionado ao carrinho
     E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)"" do carrinho
     E o carrinho deve ficar vazio

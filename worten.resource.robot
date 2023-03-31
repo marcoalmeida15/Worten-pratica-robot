@@ -5,19 +5,20 @@ Library    OperatingSystem
 *** Variables ***
 # ${DELAY}                     0.5
 ${URL}                       https://www.worten.pt
-${Aceitar_cookies}           //button[@type='button'][contains(.,'Aceitar Tudo')]
+${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button[2]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
-${Olá!_IniciarSessão}        //button[contains(@class,'login-container button--tertiary button--lg button--white')]
+${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]/button
 ${Iniciar_Sessão}            //a[contains(.,'Iniciar Sessão')]
 ${Área_Cliente}              //div[@class='client-area-v3']
-${Produtos}                  //button[contains(@aria-label,'Produtos')]
+${Produtos}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[1]/button
 ${Verifica_Marcas}           //span[@class='highlighted-nav__title'][contains(.,'Marcas')]
-${Informática}               (//button[@class='nav-tab__categories__button'][contains(.,'Informática')])[1]
+${Informática}               //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/div/ul/li[3]/button
 ${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
 ${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[10]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
-${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
+${Adiciona_Carrinho}         //*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div/div[8]/div/button[1]
 ${Ir_Carrinho}               //*[@id="__layout"]/div/div/div[2]/div/div/div/div[1]/div[2]/button[2]
-${Remover_Carrinho}          //button[contains(.,'Remover')]
+${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[3]/button
+${Remover_Carrinho}          //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[3]/button
 ${Carrinho_Vazio}            //p[@class='cart__product--empty__title font-1xl semibold neu-06'][contains(.,'Carrinho vazio')]
 ${Click_Tvs}                 //p[@class='image-links__item-title'][contains(.,'SMARTPHONES')]
 ${Opção_Samsung}             //h3[@class='simple-link__label'][contains(.,'Samsung')]
@@ -27,7 +28,7 @@ ${Telemóveis_Smartphones}    //h2[contains(.,'Telemóveis e Smartphones')]
 ${Opção_Iphone}              (//span[@class='bold'][contains(.,'iphone')])[1]
 ${Produto_Iphone14}          (//span[contains(@class,'produc-card__name__link')])[1]
 ${Opção_Cama}                (//span[@class='bold'][contains(.,'cama')])[1]
-${Produto_Cama}               //span[contains(.,'vidaXL Estrutura de cama c/ gavetas 90x200 cm branco')]
+${Produto_Cama}               //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/article/div/div/section/div/div/ul/li[4]/div/a/div[3]/div[1]/div/h3/span
 ${Botão_Carrinho}             //a[@aria-label='Carrinho']
 ${Serviços}                   //button[contains(@aria-label,'Serviços')]
 ${Verifica_Serviços}          (//span[contains(.,'Serviços')])[3]
@@ -58,14 +59,15 @@ Dado que o usuário está na home page www.worten.pt
     Go To    url=${URL}
 
 E aceitou o cookies
-    Wait Until Element Is Visible    locator=${Aceitar_cookies}
-    Click Button    locator=${Aceitar_cookies} 
+    Wait Until Element Is Visible    locator=xpath:${Aceitar_cookies}
+    Click Button    locator=xpath:${Aceitar_cookies} 
 
 Então a modal deve desaperecer
     Wait Until Element Is Visible    ${Worten}      
 
 Quando o usuário clicar em Olá! Iniciar Sessão
-    Click Button    ${Olá!_IniciarSessão} 
+    Wait Until Element Is Visible    locator=xpath:${Olá!_IniciarSessão}
+    Click Button    locator=xpath:${Olá!_IniciarSessão} 
 
 E clicar em Iniciar Sessão
     Click Link    ${Iniciar_Sessão}    
@@ -75,12 +77,14 @@ Então deve ser redirecionado para a página de login
 
 Quando o usuário clicar em "Produtos"
     Wait Until Element Is Visible    locator=xpath:${Produtos}
-    Click Button   locator=xpath:${Produtos}
+    Wait Until Element Is Not Visible    locator=xpath://*[@id="01G62RN8JEE428X09RB8JA900S"]/div[6]
+    Click Button  locator=xpath:${Produtos}
 
 Então deve retornar um menu de produtos com várias opções
     Wait Until Element Is Visible    ${Verifica_Marcas} 
 
 E clicar em "Informática"
+    Wait Until Element Is Visible    locator=xpath:${Informática} 
     Click Button    ${Informática} 
 
 E clicar em "Tablets"
@@ -91,18 +95,21 @@ Então verifica se aparece a opção LENOVO M10 Plus + Capa + Pen(10.6'' - 128 G
     Wait Until Element Is Visible    ${Produto_Tablets}      
 
 E adiciona ao carrinho
-    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div 
-    Scroll Element Into View      locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
-    Click Element    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
+    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}
+    Scroll Element Into View      locator=xpath:${Adiciona_Carrinho}
+    Click Element    locator=xpath:${Adiciona_Carrinho}
 
 E verifica se foi adicionado ao carrinho
     Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Ir_Carrinho}  
-    Click Button    locator=xpath:${Ir_Carrinho}  
-    
+    Click Element    locator=xpath:${Ir_Carrinho}  
+    Wait Until Element Is Visible   locator=xpath:${Verifica_Carrinho} 
+
 E clicou em "Informática"
+    Wait Until Element Is Visible    locator=xpath:${Informática} 
     Click Button    ${Informática} 
 
 E clicou em "Tablets"
+    Wait Until Element Is Visible    locator=xpath:${Tablets}
     Click Link    ${Tablets}
 
 Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
@@ -147,34 +154,34 @@ E clicou no produto iphone
     Click Element    ${Produto_Iphone14}  
 
 Quando adicionar a opção de iphone no carrinho
-    Wait Until Element Is Visible    ${Adiciona_Carrinho} 
-    Click Button    ${Adiciona_Carrinho}
+    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho} 
+    Click Button    locator=xpath:${Adiciona_Carrinho}
 
 Então verifica se foi adicionado ao carrinho
     Wait Until Element Is Visible    ${Ir_Carrinho}  
     Click Button    ${Ir_Carrinho}  
 
 E remova o smartphone do carrinho
-    Wait Until Element Is Visible    ${Remover_Carrinho}    
-    Click Button    ${Remover_Carrinho}
+    Wait Until Element Is Visible    locator=xpath:${Remover_Carrinho}    
+    Click Button    locator=xpath:${Remover_Carrinho}
 
 E verifica o carrinho
     Wait Until Element Is Visible    ${Carrinho_Vazio}
 
 Quando pesquisar por cama
-    Input Text    search    cama
+    Input Text    locator=id:search    text=cama
 
 E clicar na opção de cama
     Wait Until Element Is Visible    ${Opção_Cama}   
     Click Element    ${Opção_Cama}    
 
 Então clica na "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco"
-    Wait Until Element Is Visible    ${Produto_Cama}   
-    Click Element    ${Produto_Cama}   
+    Wait Until Element Is Visible    locator=xpath:${Produto_Cama}   
+    Click Element    locator=xpath:${Produto_Cama}   
 
 E adicione a "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco" no carrinho
-    Wait Until Element Is Visible    ${Adiciona_Carrinho} 
-    Click Button    ${Adiciona_Carrinho}
+    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}
+    Click Button    locator=xpath:${Adiciona_Carrinho}
 
 E verifica se adicionou ao carrinho
     Wait Until Element Is Visible    ${Botão_Carrinho}     
