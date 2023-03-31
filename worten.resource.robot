@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    OperatingSystem
 
 *** Variables ***
 # ${DELAY}                     0.5
@@ -12,9 +13,8 @@ ${Área_Cliente}              //div[@class='client-area-v3']
 ${Produtos}                  //button[contains(@aria-label,'Produtos')]
 ${Verifica_Marcas}           //span[@class='highlighted-nav__title'][contains(.,'Marcas')]
 ${Informática}               (//button[@class='nav-tab__categories__button'][contains(.,'Informática')])[1]
-${Tablets}                   //a[@href='/informatica-e-acessorios/tablets']
-${Título_Tablets}            //h1[@class='page-title__title page-title__title--centered'][contains(.,'Tablets')]
-${Produto_Tablets}           (//div[contains(@class,'product-card__flag flag--modal-disabled')])[1]
+${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
+${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[10]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
 ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
 ${Ir_Carrinho}               //button[@type='button'][contains(.,'ir para carrinho')]
 ${Remover_Carrinho}          //button[contains(.,'Remover')]
@@ -74,6 +74,7 @@ Então deve ser redirecionado para a página de login
     Wait Until Element Is Visible    ${Área_Cliente}       
 
 Quando o usuário clicar em "Produtos"
+    Wait Until Element Is Visible    locator=xpath:${Produtos}
     Click Button   ${Produtos}
 
 Então deve retornar um menu de produtos com várias opções
@@ -83,13 +84,15 @@ E clicar em "Informática"
     Click Button    ${Informática} 
 
 E clicar em "Tablets"
-    Click Link    ${Tablets}
+    Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Tablets}
+    Click Link        locator=xpath:${Tablets}
+
 Então verifica se aparece a opção LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
     Wait Until Element Is Visible    ${Produto_Tablets}      
 
 E adiciona ao carrinho
-    Wait Until Element Is Visible    ${Adiciona_Carrinho}    
-    Click Button    ${Adiciona_Carrinho}
+    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div 
+    Click Button    locator=xpath://*[@id="__layout"]/div/div/div/div[9]/div/div/section/div/div/div[2]/div[1]/div[2]/div
 
 E verifica se foi adicionado ao carrinho
     Wait Until Element Is Visible    ${Ir_Carrinho}  
@@ -102,15 +105,12 @@ E clicou em "Tablets"
     Click Link    ${Tablets}
 
 Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
-    Wait Until Element Is Visible    ${Título_Tablets}  
-    Click Element    ${Produto_Tablets}
-E clicou no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
-    Wait Until Element Is Visible    ${Título_Tablets}  
-    Click Element    ${Produto_Tablets}  
+    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Produto_Tablets}
+    Click Element    locator=xpath:${Produto_Tablets}
 
 Então adiciona ao carrinho
-    Wait Until Element Is Visible    ${Adiciona_Carrinho}    
-    Click Button    ${Adiciona_Carrinho}
+    Wait Until Keyword Succeeds    3x    10s        Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}    
+    Click Button    locator=xpath:${Adiciona_Carrinho}
 
 E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)"" do carrinho
     Wait Until Element Is Visible    ${Remover_Carrinho}    
