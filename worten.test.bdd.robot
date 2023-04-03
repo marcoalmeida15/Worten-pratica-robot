@@ -73,8 +73,8 @@ Cenário 06 - Adicionando uma "TV" ao carrinho
     E pesquisou por TVs
     E clicou na opção tvs
     Quando clicar na opção de tvs
-    Então adiciona ao carrinho
-    E verifica se foi adicionado ao carrinho
+    E adiciona ao carrinho
+    Então verificou se foi adicionado ao carrinho
 
 Cenário 07 - Removendo uma TV do carrinho
     [Documentation]    Esse teste remove uma TV ao carrinho
@@ -85,13 +85,13 @@ Cenário 07 - Removendo uma TV do carrinho
     E clicou na opção tvs
     Quando clicar na opção de tvs
     E adiciona ao carrinho
-    E verificou se foi adicionado ao carrinho
-    Então remove o produto tv do carrinho
+    Então verificou se foi adicionado ao carrinho
+    E remove o produto tv do carrinho
     E o carrinho deve estar vazio
 
 Cenário 08 - Adicionando um iphone ao carrinho
     [Documentation]    Esse teste adiciona smartphone ao carrinho
-    [Tags]             Adiciona_smartphone
+    [Tags]             Adiciona_iphone
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
     E pesquisou por iphone
@@ -100,9 +100,9 @@ Cenário 08 - Adicionando um iphone ao carrinho
     Quando adicionar a opção de iphone no carrinho
     Então verifica se foi adicionado ao carrinho
 
-Cenário 09 - Removendo smarphone do carrinho
+Cenário 09 - Removendo um iphone do carrinho
     [Documentation]    Esse teste remove um smartphone do carrinho
-    [Tags]             Remove_smartphone
+    [Tags]             Remove_iphone
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
     E pesquisou por iphone
@@ -110,7 +110,7 @@ Cenário 09 - Removendo smarphone do carrinho
     E clicou no produto iphone
     Quando adicionar a opção de iphone no carrinho
     Então verifica se foi adicionado ao carrinho
-    E remova o smartphone do carrinho
+    E remova o iphone do carrinho
     E verifica o carrinho
 
 Cenário 10 - Adicionando uma cama ao carrinho
@@ -119,9 +119,9 @@ Cenário 10 - Adicionando uma cama ao carrinho
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
     Quando pesquisar por cama
-    E clicar na opção de cama
-    Então clica na "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco"
-    E adicione a "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco" no carrinho
+    E redirecionar para as opções de camas
+    Então clica na opção de cama
+    E adicione a opção de cama no carrinho
     E verifica se adicionou ao carrinho
 
 Cenário 11 - Removendo uma cama do carrinho
@@ -130,9 +130,10 @@ Cenário 11 - Removendo uma cama do carrinho
     Dado que o usuário está na home page www.worten.pt
     E aceitou o cookies
     Quando pesquisar por cama
-    E clicar na opção de cama
-    Então clica na "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco"
-    E adicione a "vidaXL Estrutura de cama c/ gavetas 90x200 cm branco" no carrinho
+    E redirecionar para as opções de camas
+    E clica na opção de cama
+    Então adicione a opção de cama no carrinho
+    E verifica se adicionou ao carrinho
     E remova a cama do carrinho
     E verifica o carrinho
 
