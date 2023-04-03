@@ -4,3 +4,5 @@ report.html
 interactive_console_output.xml
 *.log
 *.png
+*.html
+*.xml
