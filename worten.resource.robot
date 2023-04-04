@@ -6,7 +6,7 @@ Library    OperatingSystem
 ${URL}                       https://www.worten.pt
 ${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button[2]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
-${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]
+${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]/button
 ${Iniciar_Sessão}            //a[contains(.,'Iniciar Sessão')]
 ${Área_Cliente}              //div[@class='client-area-v3']
 ${Produtos}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[1]/button
