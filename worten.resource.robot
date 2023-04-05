@@ -4,6 +4,7 @@ Library    OperatingSystem
 
 *** Variables ***
 ${URL}                       https://www.worten.pt
+${Cookies}                   /html/body/div[3]/div/div/div/section/div/header/h2
 ${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button[2]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
 ${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]/button
@@ -56,7 +57,7 @@ Dado que o usuário está na home page www.worten.pt
     Go To    url=${URL}
 
 E aceitou o cookies
-    Wait Until Element Is Visible    locator=xpath:${Aceitar_cookies}
+    Wait Until Element Is Visible    locator=xpath:/html/body/div[3]/div/div/div/section/div/header/h2
     Click Button    locator=xpath:${Aceitar_cookies} 
 
 Então a modal deve desaperecer
