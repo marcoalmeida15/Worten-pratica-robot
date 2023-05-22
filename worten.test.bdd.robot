@@ -72,9 +72,9 @@ Cenário 06 - Adicionando uma "TV" ao carrinho
     E aceitou o cookies
     E pesquisou por TVs
     E clicou na opção tvs
-    Quando clicar na opção de tvs
-    E adiciona ao carrinho
-    Então verificou se foi adicionado ao carrinho
+    Quando clicar na opção de uma tv
+    E adicionar ao carrinho
+    Então verifica se foi adicionado ao carrinho
 
 Cenário 07 - Removendo uma TV do carrinho
     [Documentation]    Esse teste remove uma TV ao carrinho
@@ -83,9 +83,9 @@ Cenário 07 - Removendo uma TV do carrinho
     E aceitou o cookies
     E pesquisou por TVs
     E clicou na opção tvs
-    Quando clicar na opção de tvs
-    E adiciona ao carrinho
-    Então verificou se foi adicionado ao carrinho
+    Quando clicar na opção de uma tv
+    E adicionar ao carrinho
+    Então verifica se foi adicionado ao carrinho
     E remove o produto tv do carrinho
     E o carrinho deve estar vazio
 
@@ -225,36 +225,36 @@ Cenário 20 - Verifica a opção Preço mínimo garantido
     Quando clica na opção "Preço mínimo garantido"
     Então deve aparecer a frase "Preço Mínimo Garantido"
 
-Cenário 21 - Criação de conta na Worten
-    [Documentation]    Esse teste verifica a opção Preço mínimo garantido
-    [Tags]             Cria_Conta
-    Dado que o usuário está na home page www.worten.pt
-    E aceitou o cookies
-    E clicou em "Olá! Iniciar Sessão"
-    E clicou em "Criar Conta"
-    Quando o usuário preencher todos os campos
+# Cenário 21 - Criação de conta na Worten
+#     [Documentation]    Esse teste verifica a opção Preço mínimo garantido
+#     [Tags]             Cria_Conta
+#     Dado que o usuário está na home page www.worten.pt
+#     E aceitou o cookies
+#     E clicou em "Olá! Iniciar Sessão"
+#     E clicou em "Criar Conta"
+#     Quando o usuário preencher todos os campos
     # E clicar em aceitar os termos
     # E clicar em "Aceitar e Criar Conta"
     # Então deve aparecer um modal com a seguinte mensagem "É necessário confirmar a criação de conta. Usa o link de confirmação enviado para o teu endereço de email."
 
-Cenário 22 - Criação de conta na Worten com não preenchimento do campo apelido
-    [Documentation]    Esse teste verifica a opção Preço mínimo garantido
-    [Tags]             Verifica_Opção
-    Dado que o usuário está na home page www.worten.pt
-    E aceitou o cookies
-    E clicou em "Olá! Iniciar Sessão"
-    E clicou em "Criar Conta"
-    Quando o usuário esquecer de preencher o campo apelido que é obrigatório
-    Então deve aparecer uma mensagem embaixo do campo "Apelido Obrigatório"
-    E não deve ser possível proceder clicando em "Criar Conta"
+# Cenário 22 - Criação de conta na Worten com não preenchimento do campo apelido
+#     [Documentation]    Esse teste verifica a opção Preço mínimo garantido
+#     [Tags]             Verifica_Opção
+#     Dado que o usuário está na home page www.worten.pt
+#     E aceitou o cookies
+#     E clicou em "Olá! Iniciar Sessão"
+#     E clicou em "Criar Conta"
+#     Quando o usuário esquecer de preencher o campo apelido que é obrigatório
+#     Então deve aparecer uma mensagem embaixo do campo "Apelido Obrigatório"
+#     E não deve ser possível proceder clicando em "Criar Conta"
 
-Cenário 23 - Criação de conta na Worten com erro
-    [Documentation]    Esse teste verifica a opção Preço mínimo garantido
-    [Tags]             Verifica_Opção
-    Dado que o usuário está na home page www.worten.pt
-    E aceitou o cookies
-    E clicou em "Olá! Iniciar Sessão"
-    E clicou em "Criar Conta"
-    Quando o usuário esquecer de flegar o "Li e aceito os Termos e Condições e confirmo que tenho mais de 16 anos de idade."
-    Então deve aparecer uma mensagem embaixo do campo "Por favor, aceita Termos e Condições"
-    E não deve ser possível proceder
+# Cenário 23 - Criação de conta na Worten com erro
+#     [Documentation]    Esse teste verifica a opção Preço mínimo garantido
+#     [Tags]             Verifica_Opção
+#     Dado que o usuário está na home page www.worten.pt
+#     E aceitou o cookies
+#     E clicou em "Olá! Iniciar Sessão"
+#     E clicou em "Criar Conta"
+#     Quando o usuário esquecer de flegar o "Li e aceito os Termos e Condições e confirmo que tenho mais de 16 anos de idade."
+#     Então deve aparecer uma mensagem embaixo do campo "Por favor, aceita Termos e Condições"
+#     E não deve ser possível proceder

@@ -7,39 +7,40 @@ ${URL}                       https://www.worten.pt
 ${Cookies}                   /html/body/div[3]/div/div/div/section/div/header/h2
 ${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button[2]
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
-${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]/button
+${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]
 ${Iniciar_Sessão}            //a[contains(.,'Iniciar Sessão')]
 ${Área_Cliente}              //div[@class='client-area-v3']
+${List_Nav}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul
 ${Produtos}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[1]/button
-${Verifica_Marcas}           //span[@class='highlighted-nav__title'][contains(.,'Marcas')]
-${Informática}               //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/div/ul/li[3]/button
+${Verifica_Marcas}           //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/span[1]/a
+${Informática}               //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/div/ul/li[3]
 ${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
 ${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[10]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
 ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
 ${Ir_Carrinho}               //*[@id="__layout"]/div/div/div[2]/div/div/div/div[1]/div[2]/button[2]
-${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[3]/button
-${Remover_Carrinho}          //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[3]/button
+${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[4]/button
+${Remover_Carrinho}          //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[4]/button
 ${Carrinho_Vazio}            //p[@class='cart__product--empty__title font-1xl semibold neu-06'][contains(.,'Carrinho vazio')]
 ${Click_Tvs}                 //p[@class='image-links__item-title'][contains(.,'SMARTPHONES')]
 ${Opção_Samsung}             //h3[@class='simple-link__label'][contains(.,'Samsung')]
 ${Título_TV}                 //p[@class='neu-11'][contains(.,'tvs 32')]
 ${Opção_Tv}                  (//span[contains(@class,'produc-card__name__link')])[1]
 ${Telemóveis_Smartphones}    //h2[contains(.,'Telemóveis e Smartphones')]
-${Opção_Iphone}              (//span[@class='bold'][contains(.,'iphone')])[1]
+${Opção_Iphone}              //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
 ${Produto_Iphone14}          (//span[contains(@class,'produc-card__name__link')])[1]
-${Opção_Cama}                (//span[@class='bold'][contains(.,'cama')])[1]
-${Produto_Cama}               //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/article/div/div/section/div/div/ul/li[4]/div/a/div[3]/div[1]/div/h3/span
-${Botão_Carrinho}             //a[@aria-label='Carrinho']
-${Serviços}                   /html/body/div[1]/div/div/div/div/div[2]/div/div/div/header/div[2]/div/div[1]/nav/ul/li[2]/button
-${Verifica_Serviços}          (//span[contains(.,'Serviços')])[3]
-${Maquina_Café}               (//p[contains(.,'máquina de café')])[1]
-${Opção_maquinadecafé}        //span[@class='produc-card__name__link'][contains(.,'Máquina de Café DELTA Q Mini Qool Cinzento')]
-${Livros}                     (//span[@class='bold'][contains(.,'livros')])[1]
-${Opção_Livro}                (//span[@class='produc-card__name__link'])[1]
-${Opção_LevantaGrátis}       //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div[1]/div[1]/a[1]/p
+${Opção_Cama}                //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
+${Produto_Cama}             //*[@id="__layout"]/div/div/div/div[1]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div/h3/span
+${Botão_Carrinho}            //a[@aria-label='Carrinho']
+${Serviços}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[2]/button
+${Verifica_Serviços}         (//span[contains(.,'Serviços')])[3]
+${Maquina_Café}              (//p[contains(.,'máquina de café')])[1]
+${Opção_maquinadecafé}       //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div[1]/h3/span
+${Livros}                    //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
+${Opção_Livro}               (//span[@class='produc-card__name__link'])[1]
+${Opção_LevantaGrátis}       //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[1]
 ${Lista_Entregas}            //h1[@class='page-title__title page-title__title--centered']
-${OpçãoRecebeEmCasa}         //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div[1]/div[1]/a[1]
-${Opção_S/Juros}             //p[contains(.,'3x sem juros** TAEG 0%')]
+${OpçãoRecebeEmCasa}         //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[2]/p
+${Opção_S/Juros}             //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[3]/p
 ${Credito_Worten}            //h1[contains(.,'Crédito Worten')]
 ${Opção_PreçoMinimo}         //p[contains(.,'Preço mínimo garantido')]
 ${Preço_Minimo}              //h1[contains(.,'Preço Mínimo Garantido')]
@@ -65,7 +66,8 @@ Então a modal deve desaperecer
 
 Quando o usuário clicar em Olá! Iniciar Sessão
     Wait Until Element Is Visible    locator=xpath:${Olá!_IniciarSessão}
-    Click Element    locator=xpath:${Olá!_IniciarSessão} 
+    Click Element At Coordinates    xpath=${Olá!_IniciarSessão}    0    40
+    Click Element   locator=xpath:${Olá!_IniciarSessão} 
 
 E clicar em Iniciar Sessão
     Click Link    ${Iniciar_Sessão}    
@@ -75,15 +77,15 @@ Então deve ser redirecionado para a página de login
 
 Quando o usuário clicar em "Produtos"
     Wait Until Element Is Visible    locator=xpath:${Produtos}
-    Wait Until Element Is Not Visible    locator=xpath://*[@id="01G62RN8JEE428X09RB8JA900S"]/div[6]
-    Click Button  locator=xpath:${Produtos}
+    Click Element At Coordinates    xpath=${Produtos}    501   40
+    Click Element    locator=xpath:${Produtos}
 
 Então deve retornar um menu de produtos com várias opções
     Wait Until Element Is Visible    ${Verifica_Marcas} 
 
 E clicar em "Informática"
     Wait Until Element Is Visible    locator=xpath:${Informática} 
-    Click Button    ${Informática} 
+    Click Element    ${Informática} 
 
 E clicar em "Tablets"
     Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Tablets}
@@ -104,7 +106,7 @@ E verifica se foi adicionado ao carrinho
 
 E clicou em "Informática"
     Wait Until Element Is Visible    locator=xpath:${Informática} 
-    Click Button    ${Informática} 
+    Click Element    ${Informática} 
 
 E clicou em "Tablets"
     Wait Until Element Is Visible    locator=xpath:${Tablets}
@@ -133,12 +135,16 @@ E clicou na opção tvs
     Wait Until Element Is Visible    ${Título_TV}  
     Click Element    ${Título_TV}  
 
-Quando clicar na opção de tvs
+Quando clicar na opção de uma tv
     Wait Until Element Is Visible    ${Opção_Tv} 
     Click Element   ${Opção_Tv} 
 
+E adicionar ao carrinho
+    Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}
+    Click Element    locator=xpath:${Adiciona_Carrinho}
+
 Então verificou se foi adicionado ao carrinho
-    Wait Until Element Is Visible    locator=//h2[@class='font-4xl'][contains(.,'O meu carrinho')]
+    Wait Until Element Is Visible    locator=${Verifica_Carrinho}
 
 E remove o produto tv do carrinho
     Wait Until Element Is Visible    ${Remover_Carrinho}    
@@ -178,7 +184,7 @@ E redirecionar para as opções de camas
     Click Element    ${Opção_Cama}    
 
 Então clica na opção de cama
-    Wait Until Element Is Visible    locator=xpath:${Produto_Cama}   
+    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Produto_Cama}   
     Click Element    locator=xpath:${Produto_Cama}   
 
 E adicione a opção de cama no carrinho
@@ -201,7 +207,8 @@ E remova a cama do carrinho
     Click Button    ${Remover_Carrinho}
 
 Quando o usuário clicar em "Serviços"
-    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Serviços} 
+    Wait Until Element Is Visible    locator=xpath:${Serviços} 
+    Click Element At Coordinates    xpath=${Serviços}    0    40
     Click Button    locator=xpath:${Serviços}     
 
 Então deve retornar um menu de serviços com várias opções
@@ -274,6 +281,7 @@ Então deve aparecer a lista de entregas rápidas
 
 Quando clicar na opção "Recebe em casa em 2 horas" 
     Wait Until Element Is Visible    locator=xpath:${OpçãoRecebeEmCasa}
+    Click Element At Coordinates    xpath=${OpçãoRecebeEmCasa}    798    514
     Click Element   locator=xpath:${OpçãoRecebeEmCasa}  
 
 Quando clica na opção "3x sem juros** TAEG 0%"
