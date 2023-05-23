@@ -37,12 +37,12 @@ ${Maquina_Café}              (//p[contains(.,'máquina de café')])[1]
 ${Opção_maquinadecafé}       //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div[1]/h3/span
 ${Livros}                    //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
 ${Opção_Livro}               (//span[@class='produc-card__name__link'])[1]
-${Opção_LevantaGrátis}       //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[1]
+${Opção_LevantaGrátis}       //*[@id="__layout"]/div/div/div/div[6]/div/div/section/div/div/div/div/a[1]/p
 ${Lista_Entregas}            //h1[@class='page-title__title page-title__title--centered']
-${OpçãoRecebeEmCasa}         //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[2]/p
-${Opção_S/Juros}             //*[@id="__layout"]/div/div/div/div[4]/div/div/section/div/div/div/div/a[3]/p
+${OpçãoRecebeEmCasa}         //*[@id="__layout"]/div/div/div/div[6]/div/div/section/div/div/div/div/a[2]/p
+${Opção_S/Juros}             //*[@id="__layout"]/div/div/div/div[6]/div/div/section/div/div/div/div/a[3]/p
 ${Credito_Worten}            //h1[contains(.,'Crédito Worten')]
-${Opção_PreçoMinimo}         //p[contains(.,'Preço mínimo garantido')]
+${Opção_PreçoMinimo}         //*[@id="__layout"]/div/div/div/div[6]/div/div/section/div/div/div/div/a[4]/p
 ${Preço_Minimo}              //h1[contains(.,'Preço Mínimo Garantido')]
 ${Criar_Conta}               //a[contains(.,'Criar Conta')]
 
@@ -275,14 +275,13 @@ E o carrinho deve estar vazio
 
 Quando clicar na opção "Levanta grátis na loja em 15 minutos" 
     Wait Until Element Is Visible    locator=xpath:${Opção_LevantaGrátis} 
-    Click Element    locator=xpath:${Opção_LevantaGrátis} 
+    Click Element   locator=xpath:${Opção_LevantaGrátis} 
 
 Então deve aparecer a lista de entregas rápidas
     Wait Until Element Is Visible    ${Lista_Entregas} 
 
 Quando clicar na opção "Recebe em casa em 2 horas" 
     Wait Until Element Is Visible    locator=xpath:${OpçãoRecebeEmCasa}
-    Click Element At Coordinates    xpath=${OpçãoRecebeEmCasa}    798    514
     Click Element   locator=xpath:${OpçãoRecebeEmCasa}  
 
 Quando clica na opção "3x sem juros** TAEG 0%"
