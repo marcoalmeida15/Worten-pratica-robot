@@ -15,12 +15,12 @@ ${Produtos}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/di
 ${Verifica_Marcas}           //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/span[1]/a
 ${Informática}               //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/div/ul/li[3]
 ${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
-${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[10]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
+${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[12]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div[1]/h3
 ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
 ${Ir_Carrinho}               //*[@id="__layout"]/div/div/div[2]/div/div/div/div[1]/div[2]/button[2]
-${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[4]/button
-${Remover_Carrinho}          //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/div[2]/div/div[4]/button
-${Carrinho_Vazio}            //p[@class='cart__product--empty__title font-1xl semibold neu-06'][contains(.,'Carrinho vazio')]
+${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[7]/div/div/div/div/div[1]/div/p
+${Remover_Carrinho}          //button[@type='button'][contains(.,'Remover')]
+${Carrinho_Vazio}            //*[@id="__layout"]/div/div/div/div[7]/div/div/div/div/div[2]/div/div/p[1]
 ${Click_Tvs}                 //p[@class='image-links__item-title'][contains(.,'SMARTPHONES')]
 ${Opção_Samsung}             //h3[@class='simple-link__label'][contains(.,'Samsung')]
 ${Título_TV}                 //p[@class='neu-11'][contains(.,'tvs 32')]
@@ -29,7 +29,7 @@ ${Telemóveis_Smartphones}    //h2[contains(.,'Telemóveis e Smartphones')]
 ${Opção_Iphone}              //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
 ${Produto_Iphone14}          (//span[contains(@class,'produc-card__name__link')])[1]
 ${Opção_Cama}                //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/div/form/div[2]/ul/li[1]/a/div/p
-${Produto_Cama}             //*[@id="__layout"]/div/div/div/div[1]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div/h3/span
+${Produto_Cama}              //*[@id="__layout"]/div/div/div/div[5]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[1]
 ${Botão_Carrinho}            //a[@aria-label='Carrinho']
 ${Serviços}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[2]/button
 ${Verifica_Serviços}         (//span[contains(.,'Serviços')])[3]
@@ -91,7 +91,7 @@ E clicar em "Tablets"
     Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Tablets}
     Click Link        locator=xpath:${Tablets}
 
-Então verifica se aparece a opção LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+Então verifica se aparece a opção tablet
     Wait Until Element Is Visible    ${Produto_Tablets}      
 
 E adiciona ao carrinho
@@ -112,7 +112,7 @@ E clicou em "Tablets"
     Wait Until Element Is Visible    locator=xpath:${Tablets}
     Click Link    ${Tablets}
 
-Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+Então clica no produto Tablet 
     Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Produto_Tablets}
     Click Element    locator=xpath:${Produto_Tablets}
 
@@ -121,7 +121,7 @@ Então adiciona ao carrinho
     Scroll Element Into View      locator=xpath:${Adiciona_Carrinho}
     Click Element    locator=xpath:${Adiciona_Carrinho}
 
-E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)"" do carrinho
+E remova o produto Tablet
     Wait Until Element Is Visible    ${Remover_Carrinho}    
     Click Button    ${Remover_Carrinho}
 
@@ -184,7 +184,7 @@ E redirecionar para as opções de camas
     Click Element    ${Opção_Cama}    
 
 Então clica na opção de cama
-    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Produto_Cama}   
+    Wait Until Element Is Visible    locator=xpath:${Produto_Cama}   
     Click Element    locator=xpath:${Produto_Cama}   
 
 E adicione a opção de cama no carrinho
@@ -224,6 +224,7 @@ E clicou na opção maquina de café
 E clicou na opção "Máquina de Café DELTA Q Mini Qool Cinzento"
     Wait Until Element Is Visible    ${Opção_maquinadecafé}  
     Click Element    ${Opção_maquinadecafé}  
+    
 Então adicione "Máquina de Café DELTA Q Mini Qool Cinzento" ao carrinho
     Wait Until Element Is Visible    ${Adiciona_Carrinho}    
     Click Button    ${Adiciona_Carrinho}
@@ -247,18 +248,18 @@ E clicou na opção livros
     Wait Until Element Is Visible    ${Livros}   
     Click Element    ${Livros}   
 
-E clicou na opção "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)"
+E clicou na opção Livro
     Wait Until Element Is Visible    ${Opção_Livro}    
     Click Element    ${Opção_Livro}    
 
-Então adicione "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)" ao carrinho
+Então adicione Livro
     Wait Until Element Is Visible    ${Adiciona_Carrinho} 
     Click Button    ${Adiciona_Carrinho}
 
 E pesquisou livros
     Input Text    search    livros
 
-Quando adicionou "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)" ao carrinho
+Quando adicionou Livro
     Wait Until Element Is Visible    ${Adiciona_Carrinho} 
     Click Button    ${Adiciona_Carrinho}
 
@@ -267,7 +268,7 @@ E verificou se adicionou ao carrinho
 
 Então remove o livro do carrinho
     Wait Until Element Is Visible    ${Remover_Carrinho}    
-    Click Button    ${Remover_Carrinho}
+    Click Element    ${Remover_Carrinho}
 
 E o carrinho deve estar vazio
     Wait Until Element Is Visible    ${Carrinho_Vazio}

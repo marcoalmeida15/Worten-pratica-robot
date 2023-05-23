@@ -37,7 +37,7 @@ Cenário 03 - Verificação Produto Tablet
     Quando o usuário clicar em "Produtos"
     E clicar em "Informática"
     E clicar em "Tablets"
-    Então verifica se aparece a opção LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+    Então verifica se aparece a opção tablet
 
 Cenário 04 - Adicionando produto ao carrinho
     [Documentation]    Esse teste adiciona produto ao carrinho
@@ -47,7 +47,7 @@ Cenário 04 - Adicionando produto ao carrinho
     Quando o usuário clicar em "Produtos"
     E clicar em "Informática"
     E clicar em "Tablets"
-    Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+    Então clica no produto Tablet 
     E adiciona ao carrinho
     E verifica se foi adicionado ao carrinho
 
@@ -59,10 +59,10 @@ Cenário 05 - Remover produto do carrinho
     Quando o usuário clicar em "Produtos"
     E clicou em "Informática"
     E clicou em "Tablets"
-    Então clica no produto Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)
+    Então clica no produto Tablet 
     E adiciona ao carrinho
     E verifica se foi adicionado ao carrinho
-    E remova o produto "Tablet LENOVO M10 Plus + Capa + Pen(10.6'' - 128 GB - 4 GB RAM - Wi-Fi - Cinzento)"" do carrinho
+    E remova o produto Tablet 
     E o carrinho deve ficar vazio
 
 Cenário 06 - Adicionando uma "TV" ao carrinho
@@ -133,7 +133,7 @@ Cenário 11 - Removendo uma cama do carrinho
     E redirecionar para as opções de camas
     E clica na opção de cama
     Então adicione a opção de cama no carrinho
-    E verifica se adicionou ao carrinho
+    E verifica se foi adicionado ao carrinho
     E remova a cama do carrinho
     E verifica o carrinho
 
@@ -176,8 +176,8 @@ Cenário 15 - Adicionar livro no carrinho
     E aceitou o cookies
     Quando pesquisou livros
     E clicou na opção livros
-    E clicou na opção "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)"
-    Então adicione "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)" ao carrinho
+    E clicou na opção Livro
+    Então adicione Livro
     E verifica se adicionou ao carrinho
 
 Cenário 16 - Remover livro do carrinho
@@ -187,8 +187,8 @@ Cenário 16 - Remover livro do carrinho
     E aceitou o cookies
     E pesquisou livros
     E clicou na opção livros
-    E clicou na opção "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)"
-    Quando adicionou "Livro Pai Rico, Pai Pobre - Edição 20 Anos de Robert T. Kiyosaki (Português-Brasil)" ao carrinho
+    E clicou na opção Livro
+    Quando adicionou Livro
     E verificou se adicionou ao carrinho
     Então remove o livro do carrinho
     E o carrinho deve estar vazio
