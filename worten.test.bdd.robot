@@ -233,7 +233,7 @@ Cenário 20 - Verifica a opção Preço mínimo garantido
 #     E clicou em "Olá! Iniciar Sessão"
 #     E clicou em "Criar Conta"
 #     Quando o usuário preencher todos os campos
-    # E clicar em aceitar os termos
+#     # E clicar em aceitar os termos
     # E clicar em "Aceitar e Criar Conta"
     # Então deve aparecer um modal com a seguinte mensagem "É necessário confirmar a criação de conta. Usa o link de confirmação enviado para o teu endereço de email."
 

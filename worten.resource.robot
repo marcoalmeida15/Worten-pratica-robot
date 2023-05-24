@@ -9,13 +9,13 @@ ${Aceitar_cookies}           /html/body/div[3]/div/div/div/section/footer/button
 ${Worten}                    //img[contains(@alt,'Worten Portugal')]
 ${Olá!_IniciarSessão}        //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[2]/nav/ul/li[1]
 ${Iniciar_Sessão}            //a[contains(.,'Iniciar Sessão')]
-${Área_Cliente}              //div[@class='client-area-v3']
+${Área_Cliente}              //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]
 ${List_Nav}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul
 ${Produtos}                  //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[2]/div/div[1]/nav/ul/li[1]/button
 ${Verifica_Marcas}           //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/span[1]/a
 ${Informática}               //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[2]/nav/div/ul/li[3]
 ${Tablets}                   //*[@id="01G62RN8JEE428X09RB8JA900S"]/div[4]/div[3]/div[1]/div/div/ul/li[3]/a
-${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[12]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div[1]/h3
+${Produto_Tablets}           //*[@id="__layout"]/div/div/div/div[12]/div/div/div/div/article/div/div/section/div/div/ul/li[2]/div/a/div[3]/div[1]/div[2]
 ${Adiciona_Carrinho}         //button[@type='button'][contains(.,'Adicionar ao carrinho')]
 ${Ir_Carrinho}               //*[@id="__layout"]/div/div/div[2]/div/div/div/div[1]/div[2]/button[2]
 ${Verifica_Carrinho}         //*[@id="__layout"]/div/div/div/div[7]/div/div/div/div/div[1]/div/p
@@ -45,6 +45,7 @@ ${Credito_Worten}            //h1[contains(.,'Crédito Worten')]
 ${Opção_PreçoMinimo}         //*[@id="__layout"]/div/div/div/div[6]/div/div/section/div/div/div/div/a[4]/p
 ${Preço_Minimo}              //h1[contains(.,'Preço Mínimo Garantido')]
 ${Criar_Conta}               //a[contains(.,'Criar Conta')]
+${Criar_conta_visible}       //*[@id="clientarea"]/div/div/div[1]/main/div[1]/p[2]
 
 *** Keywords ***
 Abrir o navegador
@@ -84,7 +85,7 @@ Então deve retornar um menu de produtos com várias opções
     Wait Until Element Is Visible    ${Verifica_Marcas} 
 
 E clicar em "Informática"
-    Wait Until Element Is Visible    locator=xpath:${Informática} 
+    Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Informática} 
     Click Element    ${Informática} 
 
 E clicar em "Tablets"
@@ -92,7 +93,10 @@ E clicar em "Tablets"
     Click Link        locator=xpath:${Tablets}
 
 Então verifica se aparece a opção tablet
-    Wait Until Element Is Visible    ${Produto_Tablets}      
+    Wait Until Element Is Visible    xpath://*[@id="__layout"]//*[contains(text(), 'tablet')]
+    ${element_list}      Get WebElements    xpath://*[@id="__layout"]//*[contains(text(), 'tablet')]
+    ${first_element}     Set Variable    ${element_list}[0]
+    Log             ${first_element.text}    
 
 E adiciona ao carrinho
     Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Adiciona_Carrinho}
@@ -105,15 +109,15 @@ E verifica se foi adicionado ao carrinho
     Wait Until Element Is Visible   locator=xpath:${Verifica_Carrinho} 
 
 E clicou em "Informática"
-    Wait Until Element Is Visible    locator=xpath:${Informática} 
+    Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Informática} 
     Click Element    ${Informática} 
 
 E clicou em "Tablets"
-    Wait Until Element Is Visible    locator=xpath:${Tablets}
+    Wait Until Keyword Succeeds    3x    10s     Wait Until Element Is Visible    locator=xpath:${Tablets}
     Click Link    ${Tablets}
 
 Então clica no produto Tablet 
-    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    locator=xpath:${Produto_Tablets}
+    Wait Until Element Is Visible    locator=xpath:${Produto_Tablets}
     Click Element    locator=xpath:${Produto_Tablets}
 
 Então adiciona ao carrinho
@@ -299,14 +303,15 @@ Então deve aparecer a frase "Preço Mínimo Garantido"
     Wait Until Element Is Visible   ${Preço_Minimo}  
 
 E clicou em "Olá! Iniciar Sessão"
-    Wait Until Element Is Visible    ${Olá!_IniciarSessão}
-    Click Button   ${Olá!_IniciarSessão}
+    Wait Until Element Is Visible    locator=xpath:${Olá!_IniciarSessão}
+    Click Element At Coordinates    xpath=${Olá!_IniciarSessão}    0    40
+    Click Element   locator=xpath:${Olá!_IniciarSessão} 
 
 E clicou em "Criar Conta"
-    Click Link    ${Criar_Conta}      
+    Click Link    ${Criar_Conta}     
     
 Quando o usuário preencher todos os campos
-    Wait Until Element Is Visible             locator=id:input-name
+    Wait Until Keyword Succeeds    3x    10s    Wait Until Element Is Visible    ${Criar_conta_visible}
     Input Text                                id:input-name                     text:Marco
     Input Text                                id:input-last-name                text:Almeida
     Input Text                                id:input-email                    text:marco.devqa@gmail.com
